@@ -41,16 +41,3 @@ function TradingViewWidget({
 }
 
 export default memo(TradingViewWidget);
-
-{
-  /* <div className="tradingview-widget-copyright">
-          <a
-            href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
-            rel="noopener nofollow"
-            target="_blank"
-          >
-            <span className="blue-text">AAPL stock chart</span>
-          </a>
-          <span className="trademark"> by TradingView</span>
-        </div> */
-}
