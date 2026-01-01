@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
+import { auth } from '@/lib/better-auth/auth';
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const layout = async ({ children }: { children: React.ReactNode }) => {
+  const session = await auth.api.getSession({headers: await headers()});
+
+  if(session?.user) redirect("/")
+
   return (
     <main className="auth-layout">
       <section className="auth-left-section scrollbar-hide-default">
@@ -14,6 +21,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
             className="h-8 w-auto"
           />
         </Link>
+
 
         <div className="pb-6 lg:pb-8 flex-1">{children}</div>
       </section>
