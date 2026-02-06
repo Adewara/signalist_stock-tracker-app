@@ -15,7 +15,7 @@ if (!cached) {
 }
 
 export const connectToDatabase = async () => {
-  if (!MONGODB_URI) throw new Error("MONGODB_UTI must be set within .env");
+  if (!MONGODB_URI) throw new Error("MONGODB_URI must be set within .env");
 
   if (cached.conn) return cached.conn;
 
@@ -30,7 +30,7 @@ export const connectToDatabase = async () => {
     throw err;
   }
 
-  console.log(`Connecte to database ${process.env.NODE_ENV} - ${MONGODB_URI}`);
+  console.log(`Connected to database ${process.env.NODE_ENV} - ${MONGODB_URI}`);
 
   return cached.conn;
 };
