@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2, Star, TrendingUp } from "lucide-react";
+import { Loader2, TrendingUp } from "lucide-react";
 import {
   CommandDialog,
   CommandInput,
@@ -60,7 +60,7 @@ export const SearchCommand = ({ renderAs = "button", label = "Add stock", initia
 
   useEffect(() => {
     debouncedSearch();
-  }, [searchTerm])
+  }, [searchTerm, debouncedSearch])
 
   const handleSelectStock = () => {
     setOpen(false);
